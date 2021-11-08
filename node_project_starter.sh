@@ -1,19 +1,18 @@
-SCRIPT_DIR = '~/bash_scripts'
+#!/bin/bash
 
 git init
 
 npm init -y
 
-GITIGNORE_SRC="
+GITIGNORE_SRC=$'
 node_modules
-\n
-\n
-.vscode
-"
 
-echo $GITIGNORE_SRC >> .gitignore
+.vscode'
 
-touch .nvmrc
+echo $GITIGNORE_SRC > .gitignore
+
+[[ $(node -v) =~ ([0-9\.]+) ]] && NODE_VERSION="${BASH_REMATCH[1]}"
+echo $NODE_VERSION > .nvmrc
 
 echo 'REMINDER ***'
 echo 'Remember to edit these files: .gitignore, .nvmrc'
