@@ -4,12 +4,10 @@ git init
 
 npm init -y
 
-GITIGNORE_SRC=$'
+echo $'
 node_modules
 
-.vscode'
-
-echo $GITIGNORE_SRC > .gitignore
+.vscode' > .gitignore
 
 [[ $(node -v) =~ ([0-9\.]+) ]] && NODE_VERSION="${BASH_REMATCH[1]}"
 echo $NODE_VERSION > .nvmrc
