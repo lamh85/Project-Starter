@@ -2,7 +2,7 @@
 
 # Check if dependencies exist
 # ---------------------------
-for item in 'git' 'npm' 'blah'; do
+for item in 'git' 'npm'; do
   which $item
 
   if [ $(echo $?) -ne 0 ]; then
