@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Check if dependencies exist
+# ---------------------------
+for item in 'git' 'npm'; do
+  which $item
+
+  if [ $(echo $?) -ne 0 ]; then
+    echo "⚠️⚠️⚠️ ERROR ⚠️⚠️⚠️"
+    echo "The app cannot locate this command: ${item}"
+    echo "Exiting the app now."
+    exit 1
+  fi
+done
+
 git init
 
 npm init -y
