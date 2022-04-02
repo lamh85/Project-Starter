@@ -2,7 +2,7 @@
 
 # Check if dependencies exist
 # ---------------------------
-for item in 'git' 'npm'; do
+for item in 'git' 'npm' 'node'; do
   which $item
 
   if [ $(echo $?) -ne 0 ]; then
@@ -16,6 +16,8 @@ done
 git init
 
 npm init -y
+
+node set_package.js
 
 # TODO: Store the string as a variable.
 echo $'
